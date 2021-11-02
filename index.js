@@ -11,6 +11,7 @@ const bodyparser = require('body-parser');
 const application = express();
 const connectDB = require('./Server/database/connection');
 const authRoute = require('./Server/Routes/auth');
+const userRoute = require("./Server/Routes/users");
 const PORT = process.env.PORT || 5000;
 
 
@@ -19,6 +20,7 @@ application.use(express.json());
 connectDB();
 
 application.use("/api/auth", authRoute );
+application.use("/api/users", userRoute );
 
 application.listen(PORT, ()=>{
 
