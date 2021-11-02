@@ -13,7 +13,7 @@ const bcrypt = require('bcrypt');
 
 router.post("/register", async (req, res) => {
 
-    
+
 
     try {
 
@@ -46,19 +46,21 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req,res) => {
 
+   
     try 
     {
        const user = await User.findOne({username : req.body.username})
-       ! user && res.status(400).json("Wrong credentials");
+       ! user && res.status(400).json("Wrong credentials insertede");
 
        const validated = await bcrypt.compare(req.body.password, user.password)
-       ! validated && res.status(400).json("Wrong credentials")
+       ! validated && res.status(400).json("Wrong credentials u ")
 
        res.status(200).json(user);
 
     } catch(err) {
            
         res.status(500).json(err);
+        console.log("Vendas")
     }
 })
 
