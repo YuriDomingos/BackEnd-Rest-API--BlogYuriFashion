@@ -10,40 +10,10 @@ const mongose = require('mongoose');
 
 const CategorySchema = mongose.Schema({
 
-     title : {
-
+    name: {
         type : String,
-        required : true,
-        unique : true,
-     },
-
-     desc : {
-
-        type : String,
-        required : true,
-     },
-
-     photo :{
-
-        type: String,
-        required: false
-     },
-
-     username : {
-
-        type : String,
-        required : true,
-        
-     },
-
-     categories : {
-
-        type: Array,
-        required : false
-     }
-
-
-
+        required : true
+    }
     
 }, { timestamps : true});
 
