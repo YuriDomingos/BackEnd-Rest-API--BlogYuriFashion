@@ -40,12 +40,9 @@ const PostSchema = mongose.Schema({
 
         type: Array,
         required : false
-     }
-
-
-
+     },
     
-}, { timestamps : true});
+} , { timestamps : true});
 
 
 module.exports = mongose.model("Post", PostSchema);

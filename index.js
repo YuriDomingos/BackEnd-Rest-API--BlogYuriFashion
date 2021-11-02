@@ -10,7 +10,7 @@ const path = require('path');
 const bodyparser = require('body-parser');
 const application = express();
 const connectDB = require('./Server/database/connection');
-const authRout = require('./Server/Routes/auth');
+const authRoute = require('./Server/Routes/auth');
 const PORT = process.env.PORT || 5000;
 
 
@@ -18,7 +18,7 @@ application.use(express.json());
 
 connectDB();
 
-application.use("/api/auth", authRout);
+application.use("/api/auth", authRoute );
 
 application.listen(PORT, ()=>{
 
