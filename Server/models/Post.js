@@ -3,7 +3,7 @@
 /*
 @Autor : Yuri Domingos
 Data   : 02 - 11 - 2021
-Objectivo : Construir o modelo de um usuário
+Objectivo : Construir o modelo da postagens
 */
 
 const mongose = require('mongoose');
@@ -48,4 +48,4 @@ const PostSchema = mongose.Schema({
 }, { timestamps : true});
 
 
-module.exports = mongose.model("Post", PostUserSchema);
+module.exports = mongose.model("Post", PostSchema);
