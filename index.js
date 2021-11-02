@@ -10,14 +10,18 @@ const path = require('path');
 const bodyparser = require('body-parser');
 const application = express();
 const connectDB = require('./Server/database/connection');
+const authRout = require('./Server/Routes/auth');
 const PORT = process.env.PORT || 5000;
 
-application.use(bodyparser.urlencoded({ extended: true}));
+
+application.use(express.json()); 
 
 connectDB();
 
+application.use("/api/auth", authRout);
+
 application.listen(PORT, ()=>{
-    
+
     console.log(`Backend Rodando ${PORT}`)
 })
 
