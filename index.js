@@ -15,6 +15,7 @@ const connectDB = require('./Server/database/connection');
 const authRoute = require('./Server/Routes/auth');
 const userRoute = require("./Server/Routes/users");
 const postRoute = require("./Server/Routes/posts");
+const categoryRoute = require("./Server/Routes/categories");
 
 const PORT = process.env.PORT || 5000;
 
@@ -25,6 +26,7 @@ connectDB();
 application.use("/api/auth", authRoute );
 application.use("/api/users", userRoute );
 application.use("/api/post", postRoute);
+application.use("/api/categories", categoryRoute);
 
 application.listen(PORT, ()=>{
 
