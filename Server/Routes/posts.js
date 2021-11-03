@@ -86,7 +86,6 @@ router.get("/:id", async (req, res)=>{
          
          let posts;
 
-         /* */
 
          if ( username)
          {
@@ -100,9 +99,11 @@ router.get("/:id", async (req, res)=>{
          }else {
 
             // Se não tem as duas condições acima, mostra todas as publicações
+
+            posts = Post.find():
          }
-         const post = await Post.findById(req.params.id);
-         res.status(200).json(post);
+     
+         res.status(200).json(posts);
           
     }catch(err){
 
