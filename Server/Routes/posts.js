@@ -89,13 +89,14 @@ router.get("/:id", async (req, res)=>{
 
          if ( username)
          {
-             postd = await Post.find(username);
+             posts = await Post.find({username});
          }
          else if ( catName) {
 
-             post = await Post.find({categories: {
-                 $in:[catName] 
-             }})
+             posts = await Post.find({categories: {
+                 $in:[catName],
+             },
+            });
          }else {
 
             // Se não tem as duas condições acima, mostra todas as publicações
