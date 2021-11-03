@@ -83,7 +83,24 @@ router.delete("/:id", async (req, res) =>{
 router.get("/:id", async (req, res)=>{
 
     try {
-           
+         
+         let posts;
+
+         /* */
+
+         if ( username)
+         {
+             postd = await Post.find(username);
+         }
+         else if ( catName) {
+
+             post = await Post.find({categories: {
+                 $in:[catName] 
+             }})
+         }else {
+
+            // Se não tem as duas condições acima, mostra todas as publicações
+         }
          const post = await Post.findById(req.params.id);
          res.status(200).json(post);
           
