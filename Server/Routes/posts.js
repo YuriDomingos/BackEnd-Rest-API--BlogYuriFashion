@@ -1,7 +1,3 @@
-/*
-@Autor : Yuri Domingos
-Data   : 03 - 11 - 2021
-*/
 
 /*
 @Autor : Yuri Domingos
