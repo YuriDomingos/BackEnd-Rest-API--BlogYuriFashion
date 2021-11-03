@@ -80,7 +80,10 @@ router.delete("/:id", async (req, res) =>{
 
 //GET USER
 
-router.get("/:id", async (req, res)=>{
+router.get("/", async (req, res)=>{
+
+    const username = req.query.user;
+    const catName  = req.query.cat;
 
     try {
          
@@ -101,7 +104,7 @@ router.get("/:id", async (req, res)=>{
 
             // Se não tem as duas condições acima, mostra todas as publicações
 
-            posts = Post.find():
+            posts = await Post.find();
          }
      
          res.status(200).json(posts);
@@ -115,10 +118,9 @@ router.get("/:id", async (req, res)=>{
 // Find all post in our system 
 //GET USER ALL USER
 
-router.get("/", async (req, res)=>{
+router.get("/:id", async (req, res)=>{
 
-    const username = req.query.user;
-    const catName  = req.query.cat;
+    
 
     try {
            
