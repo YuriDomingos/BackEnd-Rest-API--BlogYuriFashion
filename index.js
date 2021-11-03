@@ -14,7 +14,6 @@ const authRoute = require('./Server/Routes/auth');
 const userRoute = require("./Server/Routes/users");
 const PORT = process.env.PORT || 5000;
 
-
 application.use(express.json()); 
 
 connectDB();
