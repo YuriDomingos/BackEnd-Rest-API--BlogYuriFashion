@@ -16,7 +16,7 @@ const bcrypt = require("bcrypt");
 
 
 
-// UPDATE   
+// UPDATE POST
 
 router.put("/:id", async (req, res) =>{
 
@@ -49,7 +49,7 @@ router.put("/:id", async (req, res) =>{
 })
 
 
-// DELETE 
+// DELETE POST
 
 
 router.delete("/:id", async (req, res) =>{
@@ -97,5 +97,21 @@ router.get("/:id", async (req, res)=>{
     }
 })
 
+
+// CREATE POST 
+
+router.post("/", async (req, res) => {
+
+    const newPost = await new Post(req.body);
+  
+    try {
+        const savedPost = new newPost.save();
+       
+        res.status(200).json(savedPost);
+    }catch(err)
+    {
+        res.status(500).json(err);
+    }
+})
 
 module.exports = router
