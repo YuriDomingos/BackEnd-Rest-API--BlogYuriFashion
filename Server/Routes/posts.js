@@ -93,6 +93,25 @@ router.get("/:id", async (req, res)=>{
     }
 })
 
+// Find all post in our system 
+//GET USER ALL USER
+
+router.get("/", async (req, res)=>{
+
+    const username = req.query.user;
+    const catName  = req.query.cat;
+
+    try {
+           
+         const post = await Post.findById(req.params.id);
+         res.status(200).json(post);
+          
+    }catch(err){
+
+        res.status(500).json(err);
+    }
+})
+
 
 // CREATE POST 
 
