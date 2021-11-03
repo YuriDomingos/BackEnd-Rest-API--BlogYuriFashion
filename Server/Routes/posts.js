@@ -50,7 +50,7 @@ router.put("/:id", async (req, res) =>{
 
 // DELETE POST
 
-router.put("/:id", async (req, res) =>{
+router.delete("/:id", async (req, res) =>{
 
    try {
 
@@ -59,15 +59,9 @@ router.put("/:id", async (req, res) =>{
       if ( post.username === req.body.username) {
 
       try {
-                 const updatedPost = await Post.findByIdAndUpdate(
-                 req.params.id,
-                 {
-                     $set : req.body,
-                 },
-                 {new : true}
-             );
+                await post.delete();
 
-             res.status(200).json(updatedPost);
+             res.status(200).json("Post has been deleted...");
         
         }catch(err){
             
@@ -75,7 +69,7 @@ router.put("/:id", async (req, res) =>{
          }   
       }
       else {
-          res.status(401).json("Error you can only update your post");
+          res.status(401).json("Error you can delete your post");
       }
 
    }catch(err){
