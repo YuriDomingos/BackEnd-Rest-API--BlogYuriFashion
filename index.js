@@ -30,7 +30,7 @@ application.use("/api/categories", categoryRoute);
 
 application.listen(PORT, ()=>{
 
-    console.log(`Backend Rodando ${PORT}`)
+    console.log(`Backend Rodando ${PORT}`)  
 })
 
 
